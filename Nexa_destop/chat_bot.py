@@ -1,17 +1,30 @@
 import os
 import time
+import random
+import datetime
 
-
-apps = {  ## nem megy!!
+apps = {  
     "np": r"C:\Windows\notepad.exe",
-    "opera": r"C:\Users\YourUser\AppData\Local\Programs\Opera GX\launcher.exe",
-    "dc": r"C:\Users\YourUser\AppData\Local\Discord\Update.exe",
+    "calc": r"C:\Windows\System32\calc.exe",
+    "cmd": r"C:\Windows\System32\cmd.exe",
 }
+
+jokes = [
+    "Why did the scarecrow win an award? Because he was outstanding in his field!",
+    "I would tell you a construction joke, but I'm still working on it.",
+    "Why don't scientists trust atoms? Because they make up everything!",
+    "Why did the bicycle fall over? Because it was two-tired!",
+    "What do you call fake spaghetti? An impasta!",
+    "Why did the math book look sad? Because it had too many problems!",
+    "Why can't your nose be 12 inches long? Because then it would be a foot!",
+    "What do you call cheese that isn't yours? Nacho cheese!"
+]
 
 
 BLUE = "\033[94m"
 RED = "\033[91m"
 YELLOW = "\033[93m"
+
 NEXA_NAME = f"{BLUE}Nexa\033[0m"
 USER_NAME = f"{YELLOW}User\033[0m"
 
@@ -44,19 +57,20 @@ while True:
             if argument in apps:
                 print(f"{NEXA_NAME}:{YELLOW} Executing {argument} ...")
                 os.startfile(apps[argument])
+
             else:
                 print(f"{RED}[{NEXA_NAME}]{RED}: Unknown program shortcut.\033[0m")
             continue
 
     lower = input_text.lower()
 
-    if lower in ["hi", "hello", "hey"]:
+    if lower in ["hi", "hello", "hey", "hi!", "hello!", "hey!", "hi there", "hello there", "hey there", "greetings", "greetings!", "greetings there"]:
         print(f"{NEXA_NAME}: Hello! How can I help you?")
 
     elif lower == "/r":
         print(f"{NEXA_NAME}: What do you want to run? Use /r <shortcut>.")
 
-    elif lower == "help":
+    elif lower in ["help", "/help"]:
         print(f"{NEXA_NAME}: Commands:")
         print("  /r <shortcut> - Run an app (example: /r np)")
         print("  /exit or /q - Stop the chat bot")
@@ -66,14 +80,22 @@ while True:
         for shortcut in apps.keys():
             print(f"  {shortcut}")
 
-    elif lower == "how are you?":
+    elif lower in ["how are you?", "how are you"]:
         print(f"{NEXA_NAME}: I'm just a program, but thanks for asking!")
 
-    elif lower == "what is your name?":
+    elif lower in ["what is your name?", "what's your name?"]:
         print(f"{NEXA_NAME}: I'm Nexa, your friendly chat bot!")
 
-    elif lower == "tell me a joke":
-        print(f"{NEXA_NAME}: Why did the scarecrow win an award? Because he was outstanding in his field!")
+    elif lower in ["tell me a joke", "tell a joke", "joke", "make me laugh", "i want to laugh", "say a joke", "jokes", "joke please", "joke pls", "joke now", "joke me", "joke time", "joke!", "joke.", "joke?", "joke now please", "joke now pls"]:
+        print(f"{NEXA_NAME}: {random.choice(jokes)}")    
 
+    elif lower in ["what time is it?", "tell me the time", "current time", "time now", "time please", "time"]:
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        print(f"{NEXA_NAME}: The current time is {current_time}.")
+        
+    elif lower in ["what is the date today?", "tell me the date", "current date", "date today", "date please", "date"]:
+        current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+        print(f"{NEXA_NAME}: Today's date is {current_date}.")
+        
     else:
         print(f"{NEXA_NAME}:{RED} Sorry, I don't understand that.\033[0m")
