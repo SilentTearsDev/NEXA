@@ -1,6 +1,7 @@
 import os
 import time
 
+
 apps = {  ## nem megy!!
     "np": r"C:\Windows\notepad.exe",
     "opera": r"C:\Users\YourUser\AppData\Local\Programs\Opera GX\launcher.exe",
@@ -13,23 +14,25 @@ RED = "\033[91m"
 YELLOW = "\033[93m"
 NEXA_NAME = f"{BLUE}Nexa\033[0m"
 USER_NAME = f"{YELLOW}User\033[0m"
+
+
 print(f"{NEXA_NAME}: Hi! I'm Nexa, your chat bot. Type 'help' for commands.")
 
 while True:
     input_text = input(f"{USER_NAME}: ").strip()
     
-    # Kilépés
+    
     if input_text.lower() in ["/exit", "quit", "bye", "/q"]:
         print(f"[{NEXA_NAME}]: Goodbye!")
         time.sleep(0.5)
         break
 
-    # Üres bemenet
+  
     if input_text == "":
         print(f"{NEXA_NAME}: You didn't type anything.")
         continue
 
-    # Parancsokra bontás (pl /r np)
+   
     parts = input_text.split()
 
     if len(parts) >= 2:
@@ -45,7 +48,6 @@ while True:
                 print(f"{RED}[{NEXA_NAME}]{RED}: Unknown program shortcut.\033[0m")
             continue
 
-    # Normál chatbot válaszok
     lower = input_text.lower()
 
     if lower in ["hi", "hello", "hey"]:
