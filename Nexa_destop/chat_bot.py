@@ -19,6 +19,16 @@ jokes = [
     "Why can't your nose be 12 inches long? Because then it would be a foot!",
     "What do you call cheese that isn't yours? Nacho cheese!"
 ]
+greeting_messages = [
+    "Hello! How can I help you?",
+    "Hi there! What can I do for you?",
+    "Hey! Need any assistance?",
+    "Greetings! How may I assist you?",
+    "Hello! What would you like to do today?",
+    "Hi! I'm here to help you with anything you need.",
+    "Hey there! How can I make your day better?",
+    "Greetings! What can I do for you today?"
+]
 
 
 BLUE = "\033[94m"
@@ -65,7 +75,8 @@ while True:
     lower = input_text.lower()
 
     if lower in ["hi", "hello", "hey", "hi!", "hello!", "hey!", "hi there", "hello there", "hey there", "greetings", "greetings!", "greetings there"]:
-        print(f"{NEXA_NAME}: Hello! How can I help you?")
+        print(f"{NEXA_NAME}: {random.choice(greeting_messages)}")
+        pass
 
     elif lower == "/r":
         print(f"{NEXA_NAME}: What do you want to run? Use /r <shortcut>.")
@@ -80,16 +91,16 @@ while True:
         for shortcut in apps.keys():
             print(f"  {shortcut}")
 
-    elif lower in ["how are you?", "how are you"]:
+    elif lower in ["how are you?", "how are you", "how do you do?", "how's it going?", "how are you doing?", "how have you been?", "how's everything?", "how's life?", "how's your day?", "how's your day going?", "how's your day been?", "how are things?", "how are things going?", "how are things been?"]:
         print(f"{NEXA_NAME}: I'm just a program, but thanks for asking!")
 
-    elif lower in ["what is your name?", "what's your name?"]:
+    elif lower in ["what is your name?", "what's your name?", "who are you?", "who am i talking to?", "identify yourself", "name please", "your name", "tell me your name", "can you tell me your name?", "may i know your name?"]:
         print(f"{NEXA_NAME}: I'm Nexa, your friendly chat bot!")
 
     elif lower in ["tell me a joke", "tell a joke", "joke", "make me laugh", "i want to laugh", "say a joke", "jokes", "joke please", "joke pls", "joke now", "joke me", "joke time", "joke!", "joke.", "joke?", "joke now please", "joke now pls"]:
-        print(f"{NEXA_NAME}: {random.choice(jokes)}")    
+        print(f"{NEXA_NAME}: {random.choice(jokes)}")
 
-    elif lower in ["what time is it?", "tell me the time", "current time", "time now", "time please", "time"]:
+    elif lower in ["what time is it?", "tell me the time", "current time", "time now", "time please", "time", "time", "what's the time?", "whats the time?"]:
         current_time = datetime.datetime.now().strftime("%H:%M:%S")
         print(f"{NEXA_NAME}: The current time is {current_time}.")
         
