@@ -1,4 +1,4 @@
-# NexAI / NexAi 🚀
+#NexAi 🚀
 
 Welcome! This repo helps you build the `NexAi` Ollama model from the `MODELFILE`. Below you'll find quick, Arch Linux + ghostty terminal instructions so you can get started fast. ✨
 
@@ -15,14 +15,22 @@ Welcome! This repo helps you build the `NexAi` Ollama model from the `MODELFILE`
 # open ghostty and navigate to the project directory
 open the project directory in ghostty (navigate to where you cloned this repo)
 
+```
+```bash
 # create a python virtual environment
 python -m venv venv
+
+```
+```bash
 
 # activate the virtual environment (you should see (venv) in your terminal prompt)
 source venv/bin/activate
 
+```
+```bash
+
 # confirm activation (you should see (venv) in your terminal prompt)
-ls - to confirm you're in the project directory and the venv is active)
+ls #- to confirm you're in the project directory and the venv is active)
 ```
 
 After the venv is active, install Python dependencies:
