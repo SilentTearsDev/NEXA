@@ -1,60 +1,200 @@
-#NexAi 🚀
+# 🚀 NexAi
 
-Welcome! This repo helps you build the `NexAi` Ollama model from the `MODELFILE`. Below you'll find quick, Arch Linux + ghostty terminal instructions so you can get started fast. ✨
+> Build and customize your own Ollama AI model locally using `MODELFILE`.
 
-**Prerequisites**
-- Python 3.8+ installed on your Arch Linux system or VS Code with Python plugin.
-- Ollama installed and available on your PC
-- You must run commands in the `ghostty` terminal (the project currently only supports Arch Linux + ghostty)
+NexAi is a lightweight AI model builder designed for:
 
-**Create and activate a Python virtual environment** 🐍
+* Arch Linux
+* Ghostty terminal
+* Python virtual environments
+* Ollama
 
-#Open your `ghostty` terminal and run:
+---
 
+# Features
 
-# Open ghostty and navigate to the project directory
-open the project directory in ghostty (navigate to where you cloned this repo)
+* Build custom Ollama AI models
+* Simple Python setup
+* Editable AI behavior
+* Lightweight local workflow
+* Easy project structure
 
+---
+
+# Requirements
+
+Before starting, install:
+
+* Python 3.8+
+* Ollama
+* Ghostty terminal
+
+Optional but recommended:
+
+* VS Code
+* Git
+
+---
+
+# Setup
+
+## Open Ghostty
+
+Open the project folder inside Ghostty:
 
 ```bash
-# create a python virtual environment
+cd path/to/NexAi
+```
+
+---
+
+## Create Python Virtual Environment
+
+```bash
 python -m venv venv
-
 ```
-```bash
 
-# activate the virtual environment (you should see (venv) in your terminal prompt)
+---
+
+## Activate Virtual Environment
+
+```bash
 source venv/bin/activate
-
 ```
+
+If successful, your terminal should display:
+
 ```bash
-
-# confirm activation (you should see (venv) in your terminal prompt)
-ls #- to confirm you're in the project directory and the venv is active)
+(venv)
 ```
 
-After the venv is active, install Python dependencies:
+---
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**Ollama** 🐘
+---
 
-You need Ollama installed on your machine. On Arch Linux, follow the Ollama documentation or use an AUR helper if a community package exists. Make sure Ollama is installed!
+# Install Ollama
 
-**Running the model builder** ⚙️
+Official website:
 
-- `start_model.py` will build the `NexAi` Ollama model from the `MODELFILE` when run.
-- Important: `start_model.py` currently only works on Arch Linux when run inside the `ghostty` terminal.
+[https://ollama.com](https://ollama.com)
+
+Verify installation:
 
 ```bash
-**Customize your own AI model** 🛠️
+ollama --version
+```
 
-- Want your own model? Edit the `MODELFILE` to change model contents and behavior. `start_model.py` uses that file to construct the model.
+---
 
-**Files of interest**
-- `MODELFILE` — edit to change model definition
-- `start_model.py` — builds the NexAi Ollama model from `MODELFILE`
-- `requirements.txt` — Python dependencies
+# Build The NexAi Model
 
+Run:
+
+```bash
+python start_model.py
+```
+
+The script will:
+
+* Read the `MODELFILE`
+* Build the AI model
+* Register it inside Ollama
+
+---
+
+# Customize The AI
+
+Edit:
+
+```bash
+MODELFILE
+```
+
+You can customize:
+
+* Personality
+* System prompts
+* Parameters
+* Instructions
+* Model configuration
+
+---
+
+# Project Structure
+
+```bash
+NexAi/
+├── MODELFILE
+├── start_model.py
+├── requirements.txt
+└── venv/
+```
+
+---
+
+# Important Notes
+
+Currently supported only on:
+
+* Arch Linux
+* Ghostty terminal
+
+Not supported:
+
+* ❌ Windows
+* ❌ macOS
+
+---
+
+# Troubleshooting
+
+## Virtual Environment Does Not Activate
+
+Correct:
+
+```bash
+source venv/bin/activate
+```
+
+Wrong:
+
+```bash
+python venv/bin/activate
+```
+
+---
+
+## Ollama Command Not Found
+
+Check installation:
+
+```bash
+ollama --version
+```
+
+If it fails:
+
+* reinstall Ollama
+* restart Ghostty
+* verify PATH configuration
+
+---
+
+# Tips
+
+* Always activate `venv`
+* Keep `MODELFILE` organized
+* Use VS Code for editing
+* Restart terminal after installing Ollama
+
+---
+
+# 🔥 NexAi
+
+Build. Modify. Experiment. Create your own AI locally.
