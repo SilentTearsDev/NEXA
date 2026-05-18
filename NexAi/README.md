@@ -11,11 +11,11 @@ Welcome! This repo helps you build the `NexAi` Ollama model from the `MODELFILE`
 
 #Open your `ghostty` terminal and run:
 
-```bash
-# open ghostty and navigate to the project directory
+
+# Open ghostty and navigate to the project directory
 open the project directory in ghostty (navigate to where you cloned this repo)
 
-```
+
 ```bash
 # create a python virtual environment
 python -m venv venv
