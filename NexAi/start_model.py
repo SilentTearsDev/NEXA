@@ -4,9 +4,12 @@ import time
 import shutil
 import os
 import ollama
+import pathlib
 
 MODEL_NAME = "NexAi:latest"
-MODEL_FILE_PATH = "./MODELFILE"
+MODEL_FILE_PATH = BASE_DIR = pathlib.Path(__file__).resolve().parent
+model_file = BASE_DIR / "MODELFILE"
+
 
 if platform.system() == "Linux":
 
