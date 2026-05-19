@@ -6,7 +6,7 @@ import os
 import ollama
 
 MODEL_NAME = "NexAi:latest"
-MODEL_FILE_PATH = "/home/gyuri/Projects/NexAI/MODELFILE"
+MODEL_FILE_PATH = "./MODELFILE"
 
 if platform.system() == "Linux":
 
